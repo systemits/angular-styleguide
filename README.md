@@ -52,6 +52,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   1. [Routing](#routing)
   1. [Task Automation](#task-automation)
   1. [Filters](#filters)
+  1. [i18n](#i18n)
   1. [Angular Docs](#angular-docs)
   1. [Contributing](#contributing)
   1. [License](#license)
@@ -3143,6 +3144,37 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   - Avoid using filters for scanning all properties of a complex object graph. Use filters for select properties.
 
     *Why?*: Filters can easily be abused and negatively affect performance if not used wisely, for example when a filter hits a large and deep object graph.
+
+**[Back to top](#table-of-contents)**
+
+## i18n
+
+###### [Style [Y421](#style-y421)]
+
+  - Use Angular Translate to do the translation service to you.
+
+  - Use the angular translate filter only when you need to translate a parameter value.
+  
+    *Why?*: Using the angular translate as a filter a filter everytime sets up too many watch expressions and can cause performance issues.
+
+  ```html
+    <ANY propertie="{{ key | translate }}"></ANY>  
+  ```
+
+  - Use the angular translate directive and the key inside the tag when you need to translate pure text.
+
+  ```html
+    <ANY translate>key</ANY>  
+  ```
+
+  - Use the angular translate directive with the key as parameter when you need to pass parameters to the translate
+  ```html
+    <ANY translate="key" translate-values='{ username: "PascalPrect"}'></ANY>
+    
+    <ANY translate="key" translate-values="{ username: someScopeObject.username }"></ANY>
+     
+    <ANY translate="key" translate-values="{{ translationData }}"></ANY>
+  ```
 
 **[Back to top](#table-of-contents)**
 
