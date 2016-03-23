@@ -53,6 +53,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   1. [Task Automation](#task-automation)
   1. [Filters](#filters)
   1. [i18n](#i18n)
+  1. [SystemITS Code Conventions](systemits-code-conventions)
   1. [Angular Docs](#angular-docs)
   1. [Contributing](#contributing)
   1. [License](#license)
@@ -3174,6 +3175,55 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
     <ANY translate="key" translate-values="{ username: someScopeObject.username }"></ANY>
      
     <ANY translate="key" translate-values="{{ translationData }}"></ANY>
+  ```
+
+**[Back to top](#table-of-contents)**
+
+## SystemITS Code Conventions
+
+###### [Style [Y422](#style-y422)]
+
+  - Use lodash for `forEach`
+    
+    *Why?*: Because the Array forEach is asynchronous and may lead to unexpected behavior.
+
+  ```javascript
+  var array = [...];
+  
+  // Do
+  _.forEach(array, function(n){
+    console.log(n);
+  });
+
+  // Don't
+  array.forEach(function(n){
+    console.log(n);
+  });
+  ```
+
+###### [Style [Y423](#style-y423)]
+  
+  - To check the existence of an variable use:
+
+  ```javascript
+  if(var){}
+
+  if(!var){}
+  ```
+
+  - To check the existence of a variable content use:
+
+  ```javascript
+  if(_.isEmpty() === false){}
+
+  if(_.isEmpty() === true){}
+  ```
+
+  - To check booleans use:
+  ```javascript
+  if(bool === false){}
+
+  if(bool === true){}
   ```
 
 **[Back to top](#table-of-contents)**
