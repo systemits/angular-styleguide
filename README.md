@@ -53,7 +53,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   1. [Task Automation](#task-automation)
   1. [Filters](#filters)
   1. [i18n](#i18n)
-  1. [SystemITS Code Conventions](systemits-code-conventions)
+  1. [SystemITS Code Conventions](#systemits-code-conventions)
   1. [Angular Docs](#angular-docs)
   1. [Contributing](#contributing)
   1. [License](#license)
