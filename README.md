@@ -3191,13 +3191,13 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   var array = [...];
   
   // Do
-  _.forEach(array, function(n){
-    console.log(n);
+  _.forEach(array, function(n) {
+      console.log(n);
   });
 
   // Don't
-  array.forEach(function(n){
-    console.log(n);
+  array.forEach(function(n) {
+      console.log(n);
   });
   ```
 
@@ -3206,24 +3206,68 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   - To check the existence of an variable use:
 
   ```javascript
-  if(var){}
+  if (var) { ... }
 
-  if(!var){}
+  if (!var) { ... }
   ```
 
   - To check the existence of a variable content use:
 
   ```javascript
-  if(_.isEmpty() === false){}
+  if (_.isEmpty() === false) { ... }
 
-  if(_.isEmpty() === true){}
+  if (_.isEmpty() === true) { ... }
   ```
 
   - To check booleans use:
   ```javascript
-  if(bool === false){}
+  if (bool === false) { ... }
 
-  if(bool === true){}
+  if (bool === true) { ... }
+  ```
+
+###### [Style [Y424](#style-y424)]
+
+  - Name functions which initialize something with the prefix `configure`
+
+  ```javascript
+  function configureAlarm() {
+    ...
+  }
+  ```
+
+  - Use the prefix `is` to name boolean variables, if needed.
+
+  ```javascript
+  var isOpen = false;
+  var isValid = true;
+  var isError = false;
+  ```
+
+  - Use the sufix `options` to name configuration parameters in functions.
+  
+  ```javascript
+  function configureChart(chartOptions) {
+
+  }
+  ```
+
+###### [Style [Y425](#style-y425)]
+
+  - It is ok to use ternaries to initialize variables.
+
+  ```javascript
+  function soSomething(isError) {
+    var msg = isError ? 'errorMsg' : 'successMsg';
+  }
+  ```
+
+  - Sanity checking, or, initializing an undefined variable:
+
+  ```javascript
+  function createAlarm(name) {
+    name = name ? name : 'defaultName';
+  }
   ```
 
 **[Back to top](#table-of-contents)**
