@@ -3181,6 +3181,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
 
 ## SystemITS Code Conventions
 
+### forEach
 ###### [Style [Y422](#style-y422)]
 
   - Use lodash for `forEach`
@@ -3200,7 +3201,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
       console.log(n);
   });
   ```
-
+### if 
 ###### [Style [Y423](#style-y423)]
   
   - To check the existence of an variable use:
@@ -3220,12 +3221,13 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   ```
 
   - To check booleans use:
+  
   ```javascript
   if (bool === false) { ... }
 
   if (bool === true) { ... }
   ```
-
+### Prefixes and suffixes
 ###### [Style [Y424](#style-y424)]
 
   - Name functions which initialize something with the prefix `configure`
@@ -3244,14 +3246,15 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   var isError = false;
   ```
 
-  - Use the sufix `options` to name configuration parameters in functions.
+  - Use the suffix `options` to name configuration parameters in functions.
   
   ```javascript
   function configureChart(chartOptions) {
-
+    ...
   }
   ```
 
+### Ternary operator
 ###### [Style [Y425](#style-y425)]
 
   - It is ok to use ternaries to initialize variables.
