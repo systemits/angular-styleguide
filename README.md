@@ -3275,6 +3275,71 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   }
   ```
 
+## System Test conventions
+
+### Inject controller and dependencies and modules
+###### [Style [Y423](#style-y423)]
+
+  - Use bard library to load modules
+    
+    *Why?*: To eliminate the tedious variable definition and assignment statements that crowd the top of a describe block.
+
+  ```javascript
+  var controller;
+  
+  // Do
+  bard.appModule('app.layout');
+  bard.inject(this, '$controller', '$log', '$timeout', 'toastr');
+        controller = $controller('Shell');
+
+  // Don't
+  var $log;
+  var $timeout;
+  
+  module('app.layout');
+  inject(function($controller, _$log_, _$timeout_, toastr) {
+            // Crazy stuff we do to disable the toastr
+            toastr.info = function() {};
+            toastr.error = function() {};
+            toastr.warning = function() {};
+            toastr.success = function() {};
+
+            $log = _$log_;
+            $timeout = _$timeout_;
+            controller = $controller('Shell');
+        });
+  ```
+  
+### Naming test files
+###### [Style [Y424](#style-y424)]
+
+* Unit tests
+
+  - Name them after the file being tested. 
+    
+    *Why?*: To keep spec files next to the respective files they are testing.
+
+### JSHint on test files
+###### [Style [Y424](#style-y424)]
+
+* Unit tests
+
+  - Supress warnings related to "Expected an assignment or function call and instead saw an expression" 
+    
+    *Why?*: Some chai assertion chains are not called as functions. Thus, JsLint gives warning about it.
+
+  ```javascript
+  /*jshint -W030 */
+  
+  describe('a test suite', function() {
+    it('should pass', function() {
+      expect(true).to.be.true;
+    });
+  });
+  
+  ```
+
+
 **[Back to top](#table-of-contents)**
 
 ## Angular docs
