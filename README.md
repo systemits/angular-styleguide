@@ -3177,13 +3177,44 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
      
     <ANY translate="key" translate-values="{{ translationData }}"></ANY>
   ```
+###### [Style [Y422](#style-y422)]
+
+  - Rules to create great localization keys
+
+  - Follow the pattern `location-component-function`, where:
+    - `location` means where in the application the string is placed
+    - `component` is the description of the component where the string is placed
+    - `function` is the meaning of the string in the context
+
+  - The `function`s are limited by: `text`, `label`, `title`, `tooltip`, `message` and `error`.
+  
+  - Example: 
+  ```javascript
+  {
+    "login-username-input-label": "Username",
+    "login-username-input-error": "Required field",
+
+    "login-password-input-label": "Password",
+    "login-password-input-error": "Required field",
+
+    "login-button-text": "Login",
+    "login-disabled-button-text": "Logging in...",
+
+    "login-keep-connected-checkbox-label": "Keep conected",
+
+    "login-connection-error": "Connection error",
+    "login-form-invalid-error": "Invalid username or password",
+    "login-default-error": "Can't log in"
+  }
+  ```
+
 
 **[Back to top](#table-of-contents)**
 
 ## SystemITS Code Conventions
 
 ### forEach
-###### [Style [Y422](#style-y422)]
+###### [Style [Y423](#style-y423)]
 
   - Use lodash for `forEach`
     
@@ -3204,7 +3235,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   ```
 
 ### if 
-###### [Style [Y423](#style-y423)]
+###### [Style [Y424](#style-y424)]
   
   - To check the existence of an variable use:
 
@@ -3231,7 +3262,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   ```
 
 ### Prefixes and suffixes
-###### [Style [Y424](#style-y424)]
+###### [Style [Y425](#style-y425)]
 
   - Name functions which initialize something with the prefix `configure`
 
@@ -3258,7 +3289,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   ```
 
 ### Ternary operator
-###### [Style [Y425](#style-y425)]
+###### [Style [Y426](#style-y426)]
 
   - It is ok to use ternaries to initialize variables.
 
@@ -3279,7 +3310,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
 ## SystemITS Test Conventions
 
 ### Inject controller and dependencies and modules
-###### [Style [Y423](#style-y423)]
+###### [Style [Y427](#style-y427)]
 
   - Use bard library to load modules
     
@@ -3312,7 +3343,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
   ```
   
 ### Naming test files
-###### [Style [Y424](#style-y424)]
+###### [Style [Y428](#style-y428)]
 
 * Unit tests
 
@@ -3321,7 +3352,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
     *Why?*: To keep spec files next to the respective files they are testing.
 
 ### JSHint on test files
-###### [Style [Y424](#style-y424)]
+###### [Style [Y429](#style-y429)]
 
 * Unit tests
 
