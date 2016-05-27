@@ -3151,9 +3151,10 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
 
 ## i18n
 
+### Using Angular Translate
 ###### [Style [Y421](#style-y421)]
 
-  - Use Angular Translate to do the translation service to you.
+  - Use [Angular Translate](https://angular-translate.github.io/) to do the translation service to you.
 
   - Use the angular translate filter only when you need to translate a parameter value.
   
@@ -3177,10 +3178,8 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
      
     <ANY translate="key" translate-values="{{ translationData }}"></ANY>
   ```
-
+### Rules to create great localization keys
 ###### [Style [Y422](#style-y422)]
-
-  - Rules to create great localization keys
 
   - Follow the pattern `location-component-function`, where:
     - `location` means where in the application the string is placed
@@ -3208,7 +3207,9 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
     "login-default-error": "Can't log in"
   }
   ```
-
+  - References:
+    - https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_content_best_practices
+    - https://github.com/joomla/joomla-cms/tree/staging/language/en-GB
 
 **[Back to top](#table-of-contents)**
 
