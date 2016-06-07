@@ -3200,7 +3200,7 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
     "login-button-text": "Login",
     "login-disabled-button-text": "Logging in...",
 
-    "login-keep-connected-checkbox-label": "Keep conected",
+    "login-keep-connected-checkbox-label": "Keep connected",
 
     "login-connection-error": "Connection error",
     "login-form-invalid-error": "Invalid username or password",
